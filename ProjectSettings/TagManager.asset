@@ -6,6 +6,7 @@ TagManager:
   tags:
   - RearTyre
   - tri
+  - Coin
   layers:
   - Default
   - TransparentFX

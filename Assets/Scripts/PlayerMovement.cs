@@ -3,12 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using UnityEngine.UI;
 
 
 public class PlayerMovement : MonoBehaviour
 {
     Rigidbody rb;
     public TextMeshProUGUI timerText;
+
+    //coin collection
+    public static int numberOfCoins;
+    public Text coinsText;
+
 
 
     [SerializeField] float movementSpeed = 5f;
@@ -32,6 +38,8 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         audioSource = GetComponent<AudioSource>();
         // rear_tyre = GameObject.FindGameObjectWithTag("RearTyre");
+        //Coin Collection
+        numberOfCoins = 0;
         
         
     }
@@ -91,6 +99,8 @@ public class PlayerMovement : MonoBehaviour
         }
 
         */
+        //coin collection
+        coinsText.text = "Coins: " + numberOfCoins;
 
 
     }
@@ -105,14 +115,18 @@ public class PlayerMovement : MonoBehaviour
     */
 
     void OnTriggerEnter(Collider collision)
-	{   
-        audioSource.Play();
-		Debug.Log(collision.gameObject.name);
-		bike_lives--;
-		if(bike_lives == 0)
-		{
-		    SceneManager.LoadScene(2);
-		}
+	{
+        if (!collision.gameObject.CompareTag("Coin"))
+        {
+            audioSource.Play();
+            Debug.Log(collision.gameObject.name);
+            bike_lives--;
+            if (bike_lives == 0)
+            {
+                SceneManager.LoadScene(2);
+            }
+        }
+
 
 	}
 
