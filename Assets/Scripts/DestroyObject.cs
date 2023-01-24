@@ -28,7 +28,7 @@ public class DestroyObject : MonoBehaviour
                 SceneManager.LoadScene(2);
             }
         }
-        timerText.text = "Hits Left" + col_hit.ToString() + "/4";
+        timerText.text = "Hits: " + col_hit.ToString() + "/4";
 
     }
 
