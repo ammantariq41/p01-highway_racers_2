@@ -1,18 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class obstacle : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public float forceApplied = 50;
+ 
+    void OnCollisionEnter(Collision other)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Debug.Log ("Adding Force!");
+        if (other.gameObject.tag == "Player")
+        {
+            other.gameObject.GetComponent<Rigidbody>().AddForce (0, forceApplied, 0);
+        }
     }
 }
