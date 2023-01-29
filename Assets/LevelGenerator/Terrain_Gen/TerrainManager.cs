@@ -27,7 +27,7 @@ public class TerrainManager : MonoBehaviour
             {
                 activeTerrains[tileIndex].SetActive(true);
                 zSpawn += 200;
-            }s
+            }
                 
 
             
