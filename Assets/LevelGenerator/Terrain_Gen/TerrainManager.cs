@@ -11,17 +11,39 @@ public class TerrainManager : MonoBehaviour
     public int numberOfTerrains = 3;
     private List<GameObject> activeTerrains = new List<GameObject>();
 
+    int terrainTurn = 2;
 
     public Transform playerTransform;
     // Start is called before the first frame update
     void Start()
     {
+        for(int tileIndex = 0; tileIndex < numberOfTerrains; tileIndex++)
+        {
+            GameObject go = Instantiate( terrainPrefabs[tileIndex], transform.forward * zSpawn, transform.rotation );
+            activeTerrains.Add(go);
+            if(tileIndex != 0 && tileIndex != 1)
+                activeTerrains[tileIndex].SetActive(false);
+            else
+            {
+                activeTerrains[tileIndex].SetActive(true);
+                zSpawn += 200;
+            }
+                
 
+            
+        }
+
+         // this is done 1 time, so that in Update() new terrains are spawned at the correct position
+
+        
+    
+    /*
         for (int i = 0; i < numberOfTerrains; i++)
         {
             SpawnTerrain(Random.Range(0, terrainPrefabs.Length));
 
         }
+    */
 
     }
 
@@ -29,27 +51,85 @@ public class TerrainManager : MonoBehaviour
     void Update()
     {
 
-        if (playerTransform.position.z - 200 > zSpawn - (numberOfTerrains * terrainLength))
+        // pooling implementation
+
+        // initially 1 terrain only
+
+        // cross half the terrain (zspawn-100), SPAWNTERRAIN the next terrain (pool of 2 or 3)
+        if (playerTransform.position.z - 200 > zSpawn - (1 * terrainLength))
         {
-            SpawnTerrain(Random.Range(0, terrainPrefabs.Length));
-            OffTerrain();
+            // random generation still left
+            OffTerrain(terrainTurn);
+
         }
 
+       
+        // cross the full terrain (zspawn), OFFTERRAIN the prev terrain
+        if (playerTransform.position.z - 100 > zSpawn - (1 * terrainLength))
+        {
+            if(terrainTurn == numberOfTerrains-1)
+                terrainTurn = 0;
+            else
+                terrainTurn++;
+
+            SpawnTerrain(terrainTurn);
+        }
+
+        // as soon as cross the terrain completely (obj passes through zSpawn), OFFTERRAIN()
+        // immediately call SPAWNTERRAIN() on randomly gen tileIndex, that's not the previous one
+
+
+
+        // this is simple cyclic implementation
+
+        /*
+        if (playerTransform.position.z - 200 > zSpawn - (numberOfTerrains * terrainLength))
+        {
+            activeTerrains[terrainTurn].transform.position = transform.forward * (zSpawn);
+            zSpawn += 200;       
+
+            if(terrainTurn == 2)
+                terrainTurn = 0;
+            else
+                terrainTurn++;
+ 
+        
+
+        /*
+            SpawnTerrain(Random.Range(0, terrainPrefabs.Length));
+            OffTerrain();
+        */
+        //}
+        
+    
     }
 
     public void SpawnTerrain(int tileIndex)
     {
+
+        activeTerrains[tileIndex].transform.position = transform.forward * (zSpawn);
+        zSpawn += 200;
+        activeTerrains[tileIndex].SetActive(true);
+
+    /*
         GameObject go = Instantiate(terrainPrefabs[tileIndex], transform.forward * zSpawn, transform.rotation);
         activeTerrains.Add(go);
         Debug.Log(tileIndex);
         //activeTerrains.SetActive(true);
         zSpawn += terrainLength;
+    */
     }
 
-    private void OffTerrain()
+    private void OffTerrain(int tileIndex)
     {
+
+        activeTerrains[tileIndex].SetActive(false);
+
+    /*
         Destroy(activeTerrains[0]);
         activeTerrains.RemoveAt(0);
+    */
+
         //activeTerrains[0].SetActive(false);
 
         // instead of deleting, set it as inactive

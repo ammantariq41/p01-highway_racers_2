@@ -29,7 +29,7 @@ public class DestroyObject : MonoBehaviour
             dust.GetComponent<ParticleSystem>().enableEmission = true;
             StartCoroutine (stopSparkle1());
 
-            // col_hit = col_hit + 1;
+            col_hit = col_hit + 1;
             // if (col_hit == 4)
             // {
             //     Destroy(gameObject);
