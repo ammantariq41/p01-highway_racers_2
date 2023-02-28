@@ -7,6 +7,7 @@ TagManager:
   - RearTyre
   - tri
   - Coin
+  - healthpickup
   layers:
   - Default
   - TransparentFX

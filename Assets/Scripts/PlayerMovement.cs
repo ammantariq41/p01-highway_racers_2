@@ -114,21 +114,21 @@ public class PlayerMovement : MonoBehaviour
 
     */
 
-    void OnTriggerEnter(Collider collision)
-	{
-        if (!collision.gameObject.CompareTag("Coin"))
-        {
-            audioSource.Play();
-            Debug.Log(collision.gameObject.name);
-            bike_lives--;
-            if (bike_lives == 0)
-            {
-                SceneManager.LoadScene(2);
-            }
-        }
+ //   void OnTriggerEnter(Collider collision)
+	//{
+ //       if (!collision.gameObject.CompareTag("Coin"))
+ //       {
+ //           audioSource.Play();
+ //           Debug.Log(collision.gameObject.name);
+ //           bike_lives--;
+ //           if (bike_lives == 0)
+ //           {
+ //               SceneManager.LoadScene(2);
+ //           }
+ //       }
 
 
-	}
+	//}
 
     
 

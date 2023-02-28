@@ -4,22 +4,25 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 
-public class DestroyObject : MonoBehaviour
+public class DestObj : MonoBehaviour
 {
+
     public TextMeshProUGUI timerText;
-    float col_hit = 0;
+    public static float col_hit = 0;
     public AudioSource audioSource;
     public Transform dust;
 
     // Start is called before the first frame update
     void Start()
     {
+        col_hit = 0;
         audioSource = GetComponent<AudioSource>();
         dust.GetComponent<ParticleSystem>().enableEmission = false;
     }
 
     // Update is called once per frame
-   
+    
+
     void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.tag == "tri")
@@ -33,10 +36,12 @@ public class DestroyObject : MonoBehaviour
              if (col_hit == 4)
              {
                  Destroy(gameObject);
+               
+                TerrainManager.terrainsPassed = 0;
                  SceneManager.LoadScene(2);
             }
         }
-        timerText.text = "Hits" + col_hit.ToString() + "/4";
+        timerText.text = "Hits " + col_hit.ToString() + "/4";
     }
 
     IEnumerator stopSparkle1()

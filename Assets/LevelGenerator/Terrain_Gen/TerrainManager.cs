@@ -5,10 +5,12 @@ using UnityEngine;
 public class TerrainManager : MonoBehaviour
 {
 
+
     public GameObject[] terrainPrefabs;
     public float zSpawn = 0;
     public float terrainLength = 200;
     public int numberOfTerrains = 3;
+    public static float  terrainsPassed = 0;
     private List<GameObject> activeTerrains = new List<GameObject>();
 
     int terrainTurn = 2;
@@ -73,6 +75,8 @@ public class TerrainManager : MonoBehaviour
                 terrainTurn++;
 
             SpawnTerrain(terrainTurn);
+            terrainsPassed += 1;
+
         }
 
         // as soon as cross the terrain completely (obj passes through zSpawn), OFFTERRAIN()
@@ -110,14 +114,20 @@ public class TerrainManager : MonoBehaviour
         activeTerrains[tileIndex].transform.position = transform.forward * (zSpawn);
         zSpawn += 200;
         activeTerrains[tileIndex].SetActive(true);
+        
+        
+       
 
-    /*
-        GameObject go = Instantiate(terrainPrefabs[tileIndex], transform.forward * zSpawn, transform.rotation);
-        activeTerrains.Add(go);
-        Debug.Log(tileIndex);
-        //activeTerrains.SetActive(true);
-        zSpawn += terrainLength;
-    */
+        
+    
+
+        /*
+            GameObject go = Instantiate(terrainPrefabs[tileIndex], transform.forward * zSpawn, transform.rotation);
+            activeTerrains.Add(go);
+            Debug.Log(tileIndex);
+            //activeTerrains.SetActive(true);
+            zSpawn += terrainLength;
+        */
     }
 
     private void OffTerrain(int tileIndex)
