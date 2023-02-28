@@ -30,11 +30,11 @@ public class DestroyObject : MonoBehaviour
             StartCoroutine (stopSparkle1());
 
             col_hit = col_hit + 1;
-            // if (col_hit == 4)
-            // {
-            //     Destroy(gameObject);
-            //     SceneManager.LoadScene(2);
-            // }
+            if (col_hit == 4)
+            {
+                Destroy(gameObject);
+                SceneManager.LoadScene(2);
+            }
         }
         timerText.text = "Hits Left" + col_hit.ToString() + "/4";
     }
