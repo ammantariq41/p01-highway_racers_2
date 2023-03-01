@@ -33,7 +33,7 @@ public class DestroyObject : MonoBehaviour
              if (col_hit == 4)
              {
                  Destroy(gameObject);
-                 SceneManager.LoadScene(2);
+                 SceneManager.LoadScene(3);
             }
         }
         timerText.text = "Hits" + col_hit.ToString() + "/4";
