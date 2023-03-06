@@ -10,6 +10,7 @@ public class TerrainManager : MonoBehaviour
     public float terrainLength = 200;
     public int numberOfTerrains = 3;
     private List<GameObject> activeTerrains = new List<GameObject>();
+    public static float terrainsPassed = 0;
 
     int terrainTurn = 2;
 
@@ -73,6 +74,7 @@ public class TerrainManager : MonoBehaviour
                 terrainTurn++;
 
             SpawnTerrain(terrainTurn);
+            terrainsPassed += 1;
         }
 
         // as soon as cross the terrain completely (obj passes through zSpawn), OFFTERRAIN()
