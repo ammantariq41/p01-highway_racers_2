@@ -41141,6 +41141,10 @@ PrefabInstance:
       propertyPath: m_Radius
       value: 0.02
       objectReference: {fileID: 0}
+    - target: {fileID: -8864023648089741041, guid: 16f815fb50f00f8499e7bd2a175c23fb, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4691952484677905867, guid: 16f815fb50f00f8499e7bd2a175c23fb, type: 3}
       propertyPath: m_RootOrder
       value: 197
