@@ -25,9 +25,9 @@ public class PlayerMovement : MonoBehaviour
     public AudioSource audioSource;
 
     public static PlayerMovement bikesnd;
-     
-    public float bikeMaxSpeed = 100f; //km per hour
-    public float currSpeed = 0f;
+
+    public float bikeMaxSpeed = 120f; //km per hour
+    public float currSpeed = 30f;
     public float bikeCurrentSpeed = 0f;
     int bike_lives = 3;
 
@@ -37,6 +37,7 @@ public class PlayerMovement : MonoBehaviour
         bikesnd = this;
         rb = GetComponent<Rigidbody>();
         audioSource = GetComponent<AudioSource>();
+        //currSpeed += Time.deltaTime * 1.1f;
         // rear_tyre = GameObject.FindGameObjectWithTag("RearTyre");
         //Coin Collection
         numberOfCoins = 0;
@@ -50,13 +51,12 @@ public class PlayerMovement : MonoBehaviour
         float horizontalInput = Input.GetAxis("Horizontal"); // camelCase as this is variable
         float verticalInput = Input.GetAxis("Vertical"); // camelCase as this is variable
 
-        rb.velocity = new Vector3(horizontalInput*movementSpeed, rb.velocity.y, verticalInput*movementSpeed);
-                
-        currSpeed = (rb.velocity.magnitude * 3.6f) / bikeMaxSpeed;
-        if(currSpeed > 0.9f)
-            bikeCurrentSpeed = 0.9f;
-        else
-            bikeCurrentSpeed = currSpeed;
+    
+
+        rb.velocity = new Vector3(horizontalInput * movementSpeed, rb.velocity.y, verticalInput * movementSpeed);
+        transform.Translate(Vector3.left * currSpeed * Time.deltaTime);
+
+        
 
         if(Input.GetButtonDown("Jump"))
         {
