@@ -1375,7 +1375,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wheelFrontTransform: {fileID: 454630172133668914}
+  wheelFrontCenter: {fileID: 0}
   wheelRearTransform: {fileID: 8558872743683246689}
+  wheelRearCenter: {fileID: 0}
+  rotationSpeed: 10000
+  GameObject: {fileID: 0}
 --- !u!1 &159378
 GameObject:
   m_ObjectHideFlags: 0
@@ -2431,7 +2435,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1193808666626813191}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.2956, z: -0.5876}
+  m_LocalPosition: {x: -0, y: 0.2947, z: -0.5867}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2583,7 +2587,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7184759068886195723}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.2956, z: 0.5874}
+  m_LocalPosition: {x: 0, y: 0.298, z: 0.582}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
