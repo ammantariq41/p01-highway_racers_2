@@ -73353,6 +73353,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SmallSedanRed
       objectReference: {fileID: 0}
+    - target: {fileID: 6343337855374322186, guid: cb9f4755c036058478601dc4f14628a0, type: 3}
+      propertyPath: m_TagString
+      value: tri
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb9f4755c036058478601dc4f14628a0, type: 3}
 --- !u!4 &6990202011249449556 stripped
@@ -74161,6 +74165,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: OriginalSmallSedan
       objectReference: {fileID: 0}
+    - target: {fileID: 4317718773136227266, guid: 436a70b435c93d74e9d4b0f983c528ea, type: 3}
+      propertyPath: m_TagString
+      value: tri
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5901262598358225319, guid: 436a70b435c93d74e9d4b0f983c528ea, type: 3}
     - {fileID: 5515285911565082468, guid: 436a70b435c93d74e9d4b0f983c528ea, type: 3}
@@ -74247,6 +74255,10 @@ PrefabInstance:
     - target: {fileID: 8304413613763557443, guid: 91f4e76ce771bf04790af018ea70d4b9, type: 3}
       propertyPath: m_Name
       value: SmallSedanWhite
+      objectReference: {fileID: 0}
+    - target: {fileID: 8304413613763557443, guid: 91f4e76ce771bf04790af018ea70d4b9, type: 3}
+      propertyPath: m_TagString
+      value: tri
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6165499282316904837, guid: 91f4e76ce771bf04790af018ea70d4b9, type: 3}
