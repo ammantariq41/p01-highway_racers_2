@@ -2185,7 +2185,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 921227750}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 2.97, y: 1.5, z: -0.09}
+  m_LocalPosition: {x: 0.3900007, y: 1.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2350,7 +2350,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0.3935936, y: -0.010437712, z: -0.025841605, w: 0.91886204}
-  m_LocalPosition: {x: 2.29, y: 7.51, z: -5.27}
+  m_LocalPosition: {x: 2.29, y: 7.51, z: 6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3280,7 +3280,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerText: {fileID: 1069119022}
   coinsText: {fileID: 794428591}
-  movementSpeed: 40
+  movementSpeed: 10
   jumpForce: 5
   speed: 2
   rotationSpeed: 2
@@ -3912,6 +3912,10 @@ PrefabInstance:
       propertyPath: GameObject
       value: 
       objectReference: {fileID: 1320457752}
+    - target: {fileID: 8146569232315623403, guid: 44e7f5e473d61e144bfb79b854a743c4, type: 3}
+      propertyPath: rotationSpeed
+      value: 1000
+      objectReference: {fileID: 0}
     - target: {fileID: 8146569232315623403, guid: 44e7f5e473d61e144bfb79b854a743c4, type: 3}
       propertyPath: wheelRearCenter
       value: 

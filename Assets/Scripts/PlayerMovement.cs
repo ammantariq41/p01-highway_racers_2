@@ -27,7 +27,7 @@ public class PlayerMovement : MonoBehaviour
     public static PlayerMovement bikesnd;
 
     public float bikeMaxSpeed = 120f; //km per hour
-    public float currSpeed = 30f;
+    public float currSpeed = 1f;
     public float bikeCurrentSpeed = 0f;
     int bike_lives = 3;
 
