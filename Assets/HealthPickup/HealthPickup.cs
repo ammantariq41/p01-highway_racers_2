@@ -8,13 +8,13 @@ public class HealthPickup : MonoBehaviour
 {
     
     public static float tracksPassed;
-    public AudioSource healthSound;
+    AudioSource healthSound;
    
 
     // Start is cthe first frame update
     void Start()
     {
-
+        healthSound = GetComponent<AudioSource>();
 
         GetComponent<CapsuleCollider>().enabled = false;
         GetComponent<MeshRenderer>().enabled = false;
