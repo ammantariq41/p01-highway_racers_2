@@ -7,7 +7,7 @@ public class Score : MonoBehaviour
 {
     public TextMeshProUGUI timerText;
     float score;
-     Rigidbody rb;
+    Rigidbody rb;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,27 +16,12 @@ public class Score : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
-         if (Input.GetKey(KeyCode.RightArrow))
-        {
-            score=score+1;
-            
-        }
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            score=score+1;
-        }
-         if (Input.GetKey(KeyCode.UpArrow))
-        {
-            score=score+1;
-        }
-        // if (Input.GetKey(KeyCode.DownArrow))
-        // {
-        //     score=score+1;
-        // }
+        score = score + 0.3f;
+
       
-        string seconds = (score).ToString();
+        string seconds = (Mathf.Floor(score)).ToString();
         timerText.text="Score: " + seconds;
     }
 }

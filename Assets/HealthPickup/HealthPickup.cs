@@ -26,7 +26,7 @@ public class HealthPickup : MonoBehaviour
     void Update()
     {
 
-        if (TerrainManager.terrainsPassed % 1 == 0 && TerrainManager.terrainsPassed != 0)
+        if (TerrainManager.terrainsPassed % 10 == 0 && TerrainManager.terrainsPassed != 0)
         {
             GetComponent<CapsuleCollider>().enabled = true;
             GetComponent<MeshRenderer>().enabled = true;

@@ -18,6 +18,8 @@ public class TerrainManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        terrainsPassed = 0;
+
         for(int tileIndex = 0; tileIndex < numberOfTerrains; tileIndex++)
         {
             GameObject go = Instantiate( terrainPrefabs[tileIndex], transform.forward * zSpawn, transform.rotation );

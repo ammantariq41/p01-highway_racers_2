@@ -14,6 +14,7 @@ public class DestObj : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        col_hit = 0;
         audioSource = GetComponent<AudioSource>();
         dust.GetComponent<ParticleSystem>().enableEmission = false;
     }
