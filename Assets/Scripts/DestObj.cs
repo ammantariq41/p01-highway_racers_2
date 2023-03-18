@@ -21,10 +21,11 @@ public class DestObj : MonoBehaviour
 
     // Update is called once per frame
    
-    void OnCollisionEnter(Collision other)
+    IEnumerator OnCollisionEnter(Collision other)
     {
         if (other.gameObject.tag == "tri")
         {
+            other.gameObject.SetActive(false);
             Debug.Log("Hit Obstacle");
             audioSource.Play();
             dust.GetComponent<ParticleSystem>().enableEmission = true;
@@ -32,12 +33,15 @@ public class DestObj : MonoBehaviour
 
             col_hit = col_hit + 1;
             if (col_hit == 4)
-           {
-             Destroy(gameObject);
-             SceneManager.LoadScene(3);
-           }
+            {
+                 Destroy(gameObject);
+                 SceneManager.LoadScene(3);
+            }
         }
         timerText.text = "Hits Left" + col_hit.ToString() + "/4";
+
+        yield return new WaitForSeconds(2);
+        other.gameObject.SetActive(true);
     }
 
     IEnumerator stopSparkle1()
