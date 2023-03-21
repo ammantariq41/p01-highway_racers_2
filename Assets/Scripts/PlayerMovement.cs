@@ -23,9 +23,10 @@ public class PlayerMovement : MonoBehaviour
     public float rotationSpeed = 5f;
     public Transform target;
     public AudioSource audioSource;
-
+    public float speedIncrease = 50f;
+    public float speedDecrease = 40f;
     public static PlayerMovement bikesnd;
-
+    public float bikeSpeed = 10f;
     public float bikeMaxSpeed = 120f; //km per hour
     public float currSpeed = 1f;
     public float bikeCurrentSpeed = 0f;
@@ -37,12 +38,7 @@ public class PlayerMovement : MonoBehaviour
         bikesnd = this;
         rb = GetComponent<Rigidbody>();
         audioSource = GetComponent<AudioSource>();
-        //currSpeed += Time.deltaTime * 1.1f;
-        // rear_tyre = GameObject.FindGameObjectWithTag("RearTyre");
-        //Coin Collection
-        numberOfCoins = 0;
-        
-        
+        numberOfCoins = 0;    
     }
 
     // Update is called once per frame put its contents into a funciton (moveRight, moveLeft etc)
@@ -51,41 +47,63 @@ public class PlayerMovement : MonoBehaviour
         float horizontalInput = Input.GetAxis("Horizontal"); // camelCase as this is variable
         float verticalInput = Input.GetAxis("Vertical"); // camelCase as this is variable
 
-    
+        if (Input.GetKeyDown(KeyCode.UpArrow)) {
+            bikeSpeed += speedIncrease;
+        }
+        if (Input.GetKeyDown(KeyCode.DownArrow)) {
+            if(bikeSpeed>10)
+            {
+                bikeSpeed -= speedDecrease;
+                bikeSpeed = Mathf.Max(bikeSpeed, 0f);
+            }
+        }
 
-        rb.velocity = new Vector3(horizontalInput * movementSpeed, rb.velocity.y, verticalInput * movementSpeed);
-        transform.Translate(Vector3.left * currSpeed * Time.deltaTime);
+        if (Input.GetKey(KeyCode.LeftArrow)) {
+            transform.Translate(Vector3.back * bikeSpeed * Time.deltaTime);
+        }
+        else if (Input.GetKey(KeyCode.RightArrow)) {
+            transform.Translate(Vector3.forward * bikeSpeed * Time.deltaTime);
+        }
+        
+        transform.Translate(Vector3.left * bikeSpeed * Time.deltaTime);
+
+
+
+        // rb.velocity = new Vector3(horizontalInput * movementSpeed, rb.velocity.y, verticalInput * movementSpeed);
+        // transform.Translate(Vector3.left * currSpeed * Time.deltaTime);
 
         
+        // Increase bike speed by 0.1 every second
+        // bikeSpeed += 0.1f * Time.deltaTime;
 
-        if(Input.GetButtonDown("Jump"))
-        {
-            rb.velocity = new Vector3(rb.velocity.x, jumpForce, rb.velocity.z);
-        }
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
+        // if(Input.GetButtonDown("Jump"))
+        // {
+        //     rb.velocity = new Vector3(rb.velocity.x, jumpForce, rb.velocity.z);
+        // }
+        // if (Input.GetKey(KeyCode.RightArrow))
+        // {
 
-            //var step = speed * Time.deltaTime;
-            float angle = Mathf.LerpAngle(transform.eulerAngles.x, 45, Time.deltaTime*rotationSpeed);
-            transform.localEulerAngles = new Vector3(angle, 90, 0);
-            //transform.localEulerAngles = new Vector3(Mathf.ler45, 90, 0);
+        //     //var step = speed * Time.deltaTime;
+        //     float angle = Mathf.LerpAngle(transform.eulerAngles.x, 45, Time.deltaTime*rotationSpeed);
+        //     transform.localEulerAngles = new Vector3(angle, 90, 0);
+        //     //transform.localEulerAngles = new Vector3(Mathf.ler45, 90, 0);
 
-            //transform.rotation = Quaternion.RotateTowards(transform.rotation, target.rotation, step);
-        }
-        else if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            float angle = Mathf.LerpAngle(transform.eulerAngles.x, -45, Time.deltaTime * rotationSpeed);
-            transform.localEulerAngles = new Vector3(angle, 90, 0);
-            //var step = speed * Time.deltaTime;
+        //     //transform.rotation = Quaternion.RotateTowards(transform.rotation, target.rotation, step);
+        // }
+        // else if (Input.GetKey(KeyCode.LeftArrow))
+        // {
+        //     float angle = Mathf.LerpAngle(transform.eulerAngles.x, -45, Time.deltaTime * rotationSpeed);
+        //     transform.localEulerAngles = new Vector3(angle, 90, 0);
+        //     //var step = speed * Time.deltaTime;
 
-            //transform.rotation = Quaternion.RotateTowards(transform.rotation, target.rotation, step);
-        }
-        else
-        {
-            float angle = Mathf.LerpAngle(transform.eulerAngles.x, 0, Time.deltaTime * rotationSpeed);
-            transform.localEulerAngles = new Vector3(angle, 90, 0);
+        //     //transform.rotation = Quaternion.RotateTowards(transform.rotation, target.rotation, step);
+        // }
+        // else
+        // {
+        //     float angle = Mathf.LerpAngle(transform.eulerAngles.x, 0, Time.deltaTime * rotationSpeed);
+        //     transform.localEulerAngles = new Vector3(angle, 90, 0);
 
-        }
+        // }
 
 
 
