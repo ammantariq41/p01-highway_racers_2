@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static PlayerMovement;
 
 public class CameraController : MonoBehaviour
 {
@@ -24,7 +25,7 @@ public class CameraController : MonoBehaviour
 
     private void follow() 
     {
-        gameObject.transform.position = Vector3.Lerp(transform.position, child.transform.position, Time.deltaTime * speed);
+        gameObject.transform.position = Vector3.Lerp(transform.position, child.transform.position, Time.deltaTime * (PlayerMovement.currSpeed-1f) );
         // gameObject.transform.LookAt(Player.gameObject.transform.position);
     }
 }
