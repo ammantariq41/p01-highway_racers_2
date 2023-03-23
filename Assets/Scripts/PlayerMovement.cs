@@ -139,7 +139,7 @@ public class PlayerMovement : MonoBehaviour
 
         */
         //coin collection
-        coinsText.text = "Coins: " + numberOfCoins;
+        coinsText.text = numberOfCoins.ToString();
 
 
     }

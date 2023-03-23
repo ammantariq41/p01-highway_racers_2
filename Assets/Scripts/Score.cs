@@ -12,13 +12,13 @@ public class Score : MonoBehaviour
     void Start()
     {
         score=0;
-         rb = GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void LateUpdate()
     {
-        score = score + 0.3f;
+        score = score + 0.3f * Time.timeScale;
 
       
         string seconds = (Mathf.Floor(score)).ToString();
