@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class Score : MonoBehaviour
 {
     public TextMeshProUGUI timerText;
-      float fuel;
+    public  static  int fuel;
     public TextMeshProUGUI FuelText;
     float score;
      Rigidbody rb;
