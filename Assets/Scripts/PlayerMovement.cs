@@ -58,11 +58,29 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        if (Input.GetKey(KeyCode.LeftArrow)) {
-            transform.Translate(Vector3.back * bikeSpeed * Time.deltaTime);
+        // if (Input.GetKey(KeyCode.LeftArrow)) {
+        //     transform.Translate(Vector3.back * bikeSpeed * Time.deltaTime);
+        // }
+        // else if (Input.GetKey(KeyCode.RightArrow)) {
+        //     transform.Translate(Vector3.forward * bikeSpeed * Time.deltaTime);
+        // }
+        if (Input.GetKey(KeyCode.RightArrow))
+        {
+
+            //var step = speed * Time.deltaTime;
+            float angle = Mathf.LerpAngle(transform.eulerAngles.x, 45, Time.deltaTime*rotationSpeed);
+            transform.localEulerAngles = new Vector3(angle, 90, 0);
+            //transform.localEulerAngles = new Vector3(Mathf.ler45, 90, 0);
+
+            //transform.rotation = Quaternion.RotateTowards(transform.rotation, target.rotation, step);
         }
-        else if (Input.GetKey(KeyCode.RightArrow)) {
-            transform.Translate(Vector3.forward * bikeSpeed * Time.deltaTime);
+        else if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            float angle = Mathf.LerpAngle(transform.eulerAngles.x, -45, Time.deltaTime * rotationSpeed);
+            transform.localEulerAngles = new Vector3(angle, 90, 0);
+            //var step = speed * Time.deltaTime;
+
+            //transform.rotation = Quaternion.RotateTowards(transform.rotation, target.rotation, step);
         }
         
         transform.Translate(Vector3.left * bikeSpeed * Time.deltaTime);
