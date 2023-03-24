@@ -56,6 +56,8 @@ public class PlayerMovement : MonoBehaviour
     {
         //increase speed on increasing distance
         currSpeed += (Time.deltaTime/8);
+        movementSpeed =Mathf.Min(movementSpeed+0.1f,8);
+
         if (currSpeed > 15f) { currSpeed = 15f; }
 
 

@@ -6,7 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class DestObj : MonoBehaviour
 {
-    public TextMeshProUGUI timerText;
+    public ProgressBar bar;
+  
     public static float col_hit = 0;
     public AudioSource audioSource;
     public Transform dust;
@@ -38,7 +39,8 @@ public class DestObj : MonoBehaviour
                  SceneManager.LoadScene(3);
             }
         }
-        timerText.text = "Hits Left" + col_hit.ToString() + "/4";
+       
+        bar.BarValue = (1-(col_hit / 4))*100;
 
         yield return new WaitForSeconds(2);
         other.gameObject.SetActive(true);
