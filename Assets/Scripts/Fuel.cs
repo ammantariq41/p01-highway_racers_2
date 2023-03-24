@@ -18,9 +18,8 @@ public class Fuel : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player")){
-            PlayerMovement.numberOfCoins += 1;
+            Score.fuel = 100;
             Destroy(gameObject);
-
         }
     }
 }
