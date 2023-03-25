@@ -1980,7 +1980,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 7.75, y: 379}
+  m_AnchoredPosition: {x: 0, y: 415.35}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &682498681
@@ -3802,6 +3802,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pb: {fileID: 864418285}
+  GameManager: {fileID: 0}
+  CurrentScore: {fileID: 0}
+  HighScore: {fileID: 0}
   audioSource: {fileID: 0}
   dust: {fileID: 1291860278}
 --- !u!114 &1320457762
@@ -7023,6 +7026,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pb: {fileID: 0}
+  GameManager: {fileID: 0}
+  CurrentScore: {fileID: 0}
+  HighScore: {fileID: 0}
   audioSource: {fileID: 0}
   dust: {fileID: 1507225585}
 --- !u!1 &218657535382026817

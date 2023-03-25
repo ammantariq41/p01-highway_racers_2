@@ -3,22 +3,31 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 
     public class DestObj : MonoBehaviour
     {
     public ProgressBar pb;
+    public GameObject GameManager;
+    public Text CurrentScore;
+    public Text HighScore;
+    private float currScore;
 
         public static float col_hit = 0;
         public AudioSource audioSource;
         public Transform dust;
 
+
+
         // Start is called before the first frame update
         void Start()
         {
+       
+        GameManager.SetActive(false);
             
             col_hit = 0;
-        pb.BarValue = 100;
+            pb.BarValue = 100;
             audioSource = GetComponent<AudioSource>();
             dust.GetComponent<ParticleSystem>().enableEmission = false;
         }
@@ -39,6 +48,17 @@ using UnityEngine.SceneManagement;
                 if (col_hit == 4)
                 {
                     Destroy(gameObject);
+                GameManager.SetActive(true);
+                currScore = Score.score;
+                PlayerPrefs.SetFloat("currentScore", currScore);
+                
+                CurrentScore.text = ""+currScore;
+                if(currScore>PlayerPrefs.GetFloat("highScore", 0))
+                {
+                    PlayerPrefs.SetFloat("highScore", currScore);
+                    
+                }
+                HighScore.text = ""+PlayerPrefs.GetFloat("highScore");
                     SceneManager.LoadScene(3);
                 }
             }

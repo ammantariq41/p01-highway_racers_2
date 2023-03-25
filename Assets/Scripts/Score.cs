@@ -6,7 +6,7 @@ using TMPro;
 public class Score : MonoBehaviour
 {
     public TextMeshProUGUI timerText;
-    float score;
+   public static float score;
     Rigidbody rb;
     // Start is called before the first frame update
     void Start()
