@@ -44,7 +44,6 @@ using UnityEngine.SceneManagement;
             }
 
             pb.BarValue = (1 - (col_hit / 4)) * 100;
-            
 
             yield return new WaitForSeconds(2);
             other.gameObject.SetActive(true);
