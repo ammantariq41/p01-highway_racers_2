@@ -9,9 +9,7 @@ using UnityEngine.UI;
     public class DestObj : MonoBehaviour
     {
     public ProgressBar pb;
-    public GameObject GameManager;
-    public Text CurrentScore;
-    public Text HighScore;
+   
     private float currScore;
 
         public static float col_hit = 0;
@@ -24,7 +22,7 @@ using UnityEngine.UI;
         void Start()
         {
        
-        GameManager.SetActive(false);
+   
             
             col_hit = 0;
             pb.BarValue = 100;
@@ -48,17 +46,17 @@ using UnityEngine.UI;
                 if (col_hit == 4)
                 {
                     Destroy(gameObject);
-                GameManager.SetActive(true);
+                
                 currScore = Score.score;
                 PlayerPrefs.SetFloat("currentScore", currScore);
                 
-                CurrentScore.text = ""+currScore;
+                
                 if(currScore>PlayerPrefs.GetFloat("highScore", 0))
                 {
                     PlayerPrefs.SetFloat("highScore", currScore);
                     
                 }
-                HighScore.text = ""+PlayerPrefs.GetFloat("highScore");
+            
                     SceneManager.LoadScene(3);
                 }
             }
