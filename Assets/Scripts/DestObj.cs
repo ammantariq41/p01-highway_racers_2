@@ -27,7 +27,7 @@ using UnityEngine.SceneManagement;
 
         IEnumerator OnCollisionEnter(Collision other)
         {
-            if (other.gameObject.tag == "tri")
+            if (other.gameObject.tag == "tri" || other.gameObject.tag == "Car")
             {
                 other.gameObject.SetActive(false);
                 Debug.Log("Hit Obstacle");

@@ -73355,7 +73355,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6343337855374322186, guid: cb9f4755c036058478601dc4f14628a0, type: 3}
       propertyPath: m_TagString
-      value: tri
+      value: Car
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb9f4755c036058478601dc4f14628a0, type: 3}
@@ -73369,6 +73369,21 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6343337855374322186, guid: cb9f4755c036058478601dc4f14628a0, type: 3}
   m_PrefabInstance: {fileID: 4110167541851189341}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4481781880265037162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6990202011249449559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 277774b4ec03b604195e15729a4379f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pb: {fileID: 0}
+  audioSource: {fileID: 0}
+  dust: {fileID: 0}
 --- !u!1001 &4123669166519808346
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -73675,7 +73690,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00cf60b63847969479baef604432ceca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthSound: {fileID: 9057086039242985331, guid: a4c576710701d3a4ea155ecf26d58a14, type: 3}
 --- !u!1001 &5911946045070316074
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -74167,7 +74181,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4317718773136227266, guid: 436a70b435c93d74e9d4b0f983c528ea, type: 3}
       propertyPath: m_TagString
-      value: tri
+      value: Car
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5901262598358225319, guid: 436a70b435c93d74e9d4b0f983c528ea, type: 3}
@@ -74201,6 +74215,21 @@ MonoBehaviour:
   currentTrafficRoute: {fileID: 0}
   nextWaypoint: {fileID: 0}
   currentWapointNumber: 0
+--- !u!114 &5631512701098978300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5567732168538789470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 277774b4ec03b604195e15729a4379f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pb: {fileID: 0}
+  audioSource: {fileID: 0}
+  dust: {fileID: 0}
 --- !u!1001 &8641316381665596461
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -74258,7 +74287,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8304413613763557443, guid: 91f4e76ce771bf04790af018ea70d4b9, type: 3}
       propertyPath: m_TagString
-      value: tri
+      value: Car
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6165499282316904837, guid: 91f4e76ce771bf04790af018ea70d4b9, type: 3}
@@ -74292,6 +74321,21 @@ MonoBehaviour:
   currentTrafficRoute: {fileID: 0}
   nextWaypoint: {fileID: 0}
   currentWapointNumber: 0
+--- !u!114 &3554527435776528916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 347669261595602030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 277774b4ec03b604195e15729a4379f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pb: {fileID: 0}
+  audioSource: {fileID: 0}
+  dust: {fileID: 0}
 --- !u!1001 &8843817531317662261
 PrefabInstance:
   m_ObjectHideFlags: 0
