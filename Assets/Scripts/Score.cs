@@ -18,7 +18,8 @@ public class Score : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
-        score = score + 0.3f;
+        if(Time.timeScale == 1f)
+            score = score + 0.3f;
 
       
         string seconds = (Mathf.Floor(score)).ToString();
