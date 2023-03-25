@@ -9,10 +9,12 @@ public class DestCar : MonoBehaviour
 {
     public AudioSource audioSource;
     public Transform dust;
+    Vector3 startPosition;
 
     // Start is called before the first frame update
     void Start()
     {
+        startPosition = transform.position;
         audioSource = GetComponent<AudioSource>();
         dust.GetComponent<ParticleSystem>().enableEmission = false;
     }
@@ -24,6 +26,7 @@ public class DestCar : MonoBehaviour
         if (other.gameObject.tag == "tri")
         {
             gameObject.SetActive(false);
+            transform.position = startPosition;
             Debug.Log("Hit Obstacle");
             audioSource.Play();
             dust.GetComponent<ParticleSystem>().enableEmission = true;
