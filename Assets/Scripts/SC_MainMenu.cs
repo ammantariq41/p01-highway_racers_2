@@ -2,55 +2,44 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class SC_MainMenu : MonoBehaviour
 {
     public static bool GameisPaused = false;
     // public GameObject pauseMenuUI;
     public GameObject MainMenu;
+    public TextMeshProUGUI buying;
+    // public GameObject FuelMenuUI;
 
     // Start is called before the first frame update
-    void Start()
-    {
-        // MainMenuButton();
-    }
+ 
 
     public void BuyFuel()
     {
         // Play Now Button has been pressed, here you can initialize your game (For example Load a Scene called GameLevel etc.)
-        if(GameisPaused)
+        if(PlayerMovement.numberOfCoins>10)
         {
-                Resume();
+                PlayerMovement.numberOfCoins=PlayerMovement.numberOfCoins-10;
+                Score.fuel=100;
+                buying.text="You bought fuel using 10 coins";
+                Score.GameisNotPaused=true;
+                Time.timeScale = 1f;
+                MainMenu.SetActive(false);
+                return;
         } else
         {
-                Pause();
-        }
-        Debug.Log("Fuel Bought");
-
-        if(GameisPaused)
-        {
-                Resume();
+                buying.text="Ending the game. You dont have 10 coins";
+                Application.Quit();
         }
     }
        public void QuitButton()
     {
         // Quit Game
+        buying.text="Quit game";
         Application.Quit();
     }
-        public void Resume()
-    {
-        MainMenu.SetActive(false);
-        Time.timeScale = 1f;
-        GameisPaused = false;
-
-    }
-
-    public void Pause()
-    {
-        MainMenu.SetActive(true);
-        Time.timeScale = 0;
-        GameisPaused = true;
-    }
+   
 
  
 }
