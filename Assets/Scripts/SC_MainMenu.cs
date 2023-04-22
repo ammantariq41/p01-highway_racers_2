@@ -18,11 +18,11 @@ public class SC_MainMenu : MonoBehaviour
     public void BuyFuel()
     {
         // Play Now Button has been pressed, here you can initialize your game (For example Load a Scene called GameLevel etc.)
-        if(PlayerMovement.numberOfCoins>10)
+        if(PlayerMovement.numberOfCoins>30)
         {
-                PlayerMovement.numberOfCoins=PlayerMovement.numberOfCoins-10;
-                Score.fuel=100;
-                buying.text="You bought fuel using 10 coins";
+                PlayerMovement.numberOfCoins=PlayerMovement.numberOfCoins-30;
+                Score.fuel+=10;
+                buying.text="You bought fuel using 30 coins";
                 Score.GameisNotPaused=true;
                 Time.timeScale = 1f;
                 MainMenu.SetActive(false);
