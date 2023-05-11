@@ -7,6 +7,8 @@ TagManager:
   - RearTyre
   - tri
   - Coin
+  - TrafficLight
+  - Car
   layers:
   - Default
   - TransparentFX

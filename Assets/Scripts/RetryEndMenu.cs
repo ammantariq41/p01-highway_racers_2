@@ -7,6 +7,6 @@ public class RetryEndMenu : MonoBehaviour
 {
 	public void RetryGame()
 	{
-		SceneManager.LoadScene(1); //replays the game scene from start
+		SceneManager.LoadScene(2); //replays the game scene from start
 	}
 }
